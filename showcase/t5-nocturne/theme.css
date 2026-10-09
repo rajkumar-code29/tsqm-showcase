@@ -1,0 +1,132 @@
+/* 5 · NOCTURNE - the evening sailing. The only dark one, and it is here to show range rather than to
+   argue for itself. */
+
+:root {
+  --night:  #0E1116;
+  --night-2:#141922;
+  --edge:   #262D38;
+  --cream:  #F2EADC;
+  --muted:  #9AA3AE;
+  --gold:   #D4A854;
+  --gold-d: #8A6C2E;
+  --ember:  #C2603A;
+
+  --display: 'Prata', Georgia, serif;
+  --text: 'Jost', system-ui, -apple-system, sans-serif;
+
+  --page: 76rem; --gutter: clamp(1.5rem, 4vw, 2.5rem);
+  --section: clamp(4.5rem, 10vw, 9rem);
+  --s0: clamp(1.03rem, 1rem + .2vw, 1.15rem);
+  --s1: clamp(1.2rem, 1.1rem + .45vw, 1.5rem);
+  --s2: clamp(1.55rem, 1.35rem + .8vw, 2.15rem);
+  --s3: clamp(1.95rem, 1.6rem + 1.5vw, 3rem);
+  --s5: clamp(2.5rem, 1.8rem + 3.4vw, 5rem);
+  --sm: .85rem;
+}
+
+body { background: var(--night); color: var(--cream); font: 400 var(--s0)/1.75 var(--text); }
+h1,h2,h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; }
+h1 { font-size: var(--s5); line-height: 1.08; }
+h2 { font-size: var(--s3); line-height: 1.16; }
+h3 { font-size: var(--s2); line-height: 1.25; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+::selection { background: var(--gold); color: var(--night); }
+
+.wrap{max-width:var(--page);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:var(--section)}
+.kick{font-size:var(--sm);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.lede{font-size:var(--s1);color:var(--muted);max-width:42ch;line-height:1.6}
+.cap{font-size:var(--sm);color:var(--muted)}
+.skip{position:absolute;left:0;top:0;padding:.75rem 1.25rem;background:var(--cream);color:var(--night);z-index:100;transform:translateY(-120%)}
+.skip:focus{transform:none}
+
+.hdr{position:fixed;inset:0 0 auto;z-index:60;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.hdr[data-stuck]{background:rgba(14,17,22,.92);backdrop-filter:blur(10px);border-bottom-color:var(--edge)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;padding-block:1.2rem}
+.hdr__mark{font-family:var(--display);font-size:var(--s1);text-decoration:none;letter-spacing:.02em}
+.hdr__nav{display:none;gap:2.3rem;align-items:center}
+@media(min-width:900px){.hdr__nav{display:flex}}
+.hdr__nav a{font-size:var(--sm);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.hdr__nav a:hover{color:var(--cream)}
+.burger{width:44px;height:44px;display:grid;place-items:center}
+@media(min-width:900px){.burger{display:none}}
+.menu{position:fixed;inset:0;z-index:70;background:var(--night);padding:1rem var(--gutter);display:none;flex-direction:column;justify-content:center;gap:.8rem}
+.menu[data-open]{display:flex}
+.menu a{font-family:var(--display);font-size:var(--s3);text-decoration:none}
+.menu__close{position:absolute;top:1rem;right:1rem;width:44px;height:44px}
+
+.btn{display:inline-block;background:var(--gold);color:var(--night);padding:1rem 2.2rem;font:500 var(--sm)/1 var(--text);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.btn:hover{background:#e0b765}
+.btn--line{background:none;color:var(--cream);border:1px solid var(--edge)}
+.btn--line:hover{background:none;border-color:var(--gold)}
+
+/* Hero: her lit, on black water */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;
+  background:radial-gradient(130% 80% at 50% 108%, #22303d 0%, #121820 42%, #0E1116 100%)}
+.hero__stars{position:absolute;inset:0;opacity:.5;
+  background-image:radial-gradient(1px 1px at 20% 18%,#fff,transparent),radial-gradient(1px 1px at 68% 12%,#fff,transparent),
+  radial-gradient(1px 1px at 84% 30%,#fff,transparent),radial-gradient(1px 1px at 38% 26%,#fff,transparent),
+  radial-gradient(1px 1px at 12% 38%,#fff,transparent),radial-gradient(1px 1px at 54% 8%,#fff,transparent)}
+.hero__city{position:absolute;left:0;right:0;bottom:26%;width:100%;opacity:.85}
+/* The lit windows along the city front. Slow, so it reads as a place rather than as an effect. */
+/* Lit windows along the waterfront. Short dashes sitting on the city's base line - the first attempt
+   ran them 90px tall and the hero looked fenced in. */
+.hero__lights{position:absolute;left:0;right:0;bottom:25.4%;height:14px;opacity:.42;
+  background-image:repeating-linear-gradient(90deg,transparent 0 9px,var(--gold) 9px 11px,transparent 11px 27px);
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent);
+  mask-image:linear-gradient(180deg,#000,transparent)}
+@media (prefers-reduced-motion: no-preference){ .hero__lights{animation:flick 9s ease-in-out infinite} }
+@keyframes flick{0%,100%{opacity:.5}50%{opacity:.68}}
+/* Clear of the copy. She sits above the headline's right edge, not through it. */
+.hero__ship{position:absolute;right:-3%;bottom:30%;width:min(56%,760px);
+  filter:drop-shadow(0 0 48px rgba(212,168,84,.22))}
+@media(max-width:900px){.hero__ship{right:-14%;width:112%;bottom:46%}}
+/* Her reflection on the water */
+.hero__ref{position:absolute;right:-3%;bottom:19%;width:min(56%,760px);transform:scaleY(-.4);transform-origin:bottom;opacity:.14;filter:blur(2.5px)}
+@media(max-width:900px){.hero__ref{display:none}}
+.hero__water{position:absolute;inset:auto 0 0;height:20%;background:linear-gradient(180deg,#0d1620,#070a0e)}
+.hero__in{position:relative;padding-bottom:clamp(3rem,8vw,6rem);width:100%}
+.hero h1{max-width:12ch}
+.hero__sub{margin-top:1.6rem;color:var(--muted);font-size:var(--s1);max-width:30ch}
+.hero__cta{margin-top:2.6rem;display:flex;gap:.9rem;flex-wrap:wrap}
+
+/* Fundraising as a lit gauge */
+.gauge{border:1px solid var(--edge);background:var(--night-2);padding:clamp(1.75rem,4vw,3rem)}
+.gauge__fig{font-family:var(--display);font-size:clamp(2.6rem,1.9rem + 3.4vw,4.6rem);line-height:1;color:var(--gold)}
+.gauge__track{height:3px;background:var(--edge);margin:2rem 0 .8rem;position:relative}
+.gauge__fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--gold-d),var(--gold));
+  box-shadow:0 0 14px rgba(212,168,84,.6);transition:width 1.8s cubic-bezier(.22,1,.36,1)}
+.gauge__scale{display:flex;justify-content:space-between;font-size:var(--sm);color:var(--muted);letter-spacing:.08em}
+
+.split{display:grid;gap:3rem}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}}
+
+/* Story: lit panels */
+.years{display:grid;gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:3rem}
+@media(min-width:760px){.years{grid-template-columns:repeat(3,1fr)}}
+.year{background:var(--night);padding:2rem 1.6rem;transition:background .25s}
+.year:hover{background:var(--night-2)}
+.year b{display:block;font-family:var(--display);font-size:var(--s2);color:var(--gold)}
+.year h3{font-size:var(--s1);font-family:var(--text);font-weight:500;margin:.7rem 0 .5rem}
+.year p{color:var(--muted);font-size:.95rem}
+
+.pillars{display:grid;gap:2.5rem;margin-top:3rem}
+@media(min-width:820px){.pillars{grid-template-columns:repeat(3,1fr)}}
+.pillar{border-top:1px solid var(--gold-d);padding-top:1.4rem}
+.pillar h3{font-size:var(--s1)}
+.pillar p{color:var(--muted);margin-top:.7rem;font-size:.95rem}
+
+.tiers{display:grid;gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:2.5rem}
+@media(min-width:700px){.tiers{grid-template-columns:repeat(4,1fr)}}
+.tier{background:var(--night);padding:1.7rem 1.3rem}
+.tier b{display:block;font-family:var(--display);font-size:var(--s2);color:var(--gold)}
+.tier span{display:block;margin-top:.5rem;font-size:.86rem;color:var(--muted)}
+
+.ftr{border-top:1px solid var(--edge);padding-block:3.5rem 2.5rem;background:var(--night-2)}
+.ftr__grid{display:grid;gap:2.5rem}
+@media(min-width:820px){.ftr__grid{grid-template-columns:1.5fr 1fr 1fr}}
+.ftr a{text-decoration:none}
+.ftr li{margin-top:.55rem;font-size:var(--sm);color:var(--muted)}
+.ftr__legal{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--edge);font-size:var(--sm);color:var(--muted);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.keyhole{width:12px;height:12px;border:1px solid var(--gold-d);transform:rotate(45deg);margin-left:auto;transition:background .25s,box-shadow .25s}
+.keyhole:hover,.keyhole:focus-visible{background:var(--gold);box-shadow:0 0 0 5px rgba(212,168,84,.2)}

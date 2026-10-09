@@ -1,0 +1,157 @@
+/* 1 · DRAUGHT - editorial heritage. Every structural device is borrowed from the ship or from
+   shipbuilding, used functionally rather than decoratively. */
+
+:root {
+  --paper:      #FBFAF8;   /* crisp near-white, faintly cool. NOT cream. */
+  --paper-sunk: #F1EEE9;
+  --edge:       #E4DFD7;
+  --ink:        #12171C;   /* blue-black, the colour of ship's paint */
+  --muted:      #5B646D;
+  --hull:       #1B3A4B;   /* deep Clyde blue-green. Accent only. */
+  --brass:      #9C7B3F;   /* never on text - 3.8:1 is a rule ratio */
+  --signal:     #A32E27;   /* funnel red. One element per page. */
+
+  --display: 'Bodoni Moda', Didot, Georgia, serif;
+  --text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --page: 75rem;
+  --gutter: clamp(1.5rem, 4vw, 2rem);
+  --section: clamp(4.5rem, 10vw, 9rem);
+  --measure: 34rem;
+
+  --s0: clamp(1.06rem, 1.02rem + .2vw, 1.19rem);
+  --s1: clamp(1.33rem, 1.25rem + .38vw, 1.58rem);
+  --s2: clamp(1.66rem, 1.53rem + .66vw, 2.11rem);
+  --s3: clamp(2.07rem, 1.86rem + 1.08vw, 2.81rem);
+  --s4: clamp(2.59rem, 2.24rem + 1.72vw, 3.75rem);
+  --s5: clamp(3.1rem, 2.5rem + 2.9vw, 5rem);
+  --sm: clamp(.86rem, .84rem + .09vw, .93rem);
+}
+
+body { background: var(--paper); color: var(--ink); font: 400 var(--s0)/1.65 var(--text); }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; }
+h1 { font-size: var(--s5); line-height: 1.02; letter-spacing: -.015em; font-variation-settings: 'opsz' 96; }
+h2 { font-size: var(--s3); line-height: 1.12; letter-spacing: -.01em; font-variation-settings: 'opsz' 48; }
+h3 { font-size: var(--s2); line-height: 1.2;  font-variation-settings: 'opsz' 32; }
+
+/* Bodoni never goes below ~27px. Its hairlines vanish on a tablet at night, and that is exactly when
+   this charity's donors read and give. */
+h4 { font: 600 var(--s1)/1.3 var(--text); }
+
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; box-shadow: 0 0 0 4px var(--hull); }
+::selection { background: var(--hull); color: var(--paper); }
+
+.wrap { max-width: var(--page); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section); }
+.measure { max-width: var(--measure); }
+.lede { font-size: var(--s1); line-height: 1.5; color: var(--muted); max-width: 34ch; text-wrap: pretty; }
+.cap { font-size: var(--sm); line-height: 1.45; color: var(--muted); }
+.rule { border: 0; border-top: 1px solid var(--edge); }
+
+/* Content sits in columns 2-7, right third open for images to bleed into. Reads like a technical
+   drawing with an annotation margin. */
+.col { max-width: var(--measure); }
+@media (min-width: 900px) { .col { margin-left: 8.333%; } }
+
+.skip { position: absolute; left: 0; top: 0; padding: .75rem 1.25rem; background: var(--ink); color: var(--paper); z-index: 100; transform: translateY(-120%); }
+.skip:focus { transform: none; }
+
+/* Header */
+.hdr { position: fixed; inset: 0 0 auto; z-index: 60; transition: background .2s ease, border-color .2s ease; border-bottom: 1px solid transparent; }
+.hdr[data-stuck] { background: var(--paper); border-bottom-color: var(--edge); }
+.hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
+.hdr__mark { font-family: var(--display); font-size: var(--s1); line-height: 1; color: var(--paper); text-decoration: none; font-variation-settings: 'opsz' 28; }
+.hdr[data-stuck] .hdr__mark { color: var(--ink); }
+.hdr__nav { display: none; gap: 2rem; align-items: center; }
+@media (min-width: 900px) { .hdr__nav { display: flex; } }
+.hdr__nav a { font-size: var(--sm); color: var(--paper); text-decoration: none; text-underline-offset: 8px; }
+.hdr[data-stuck] .hdr__nav a { color: var(--ink); }
+.hdr__nav a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
+
+.btn { display: inline-block; background: var(--signal); color: var(--paper); padding: .95rem 1.75rem; font: 600 var(--sm)/1 var(--text); text-decoration: none; min-height: 48px; line-height: 1.6; transition: opacity .15s ease; }
+.btn:hover { opacity: .9; }
+.btn--ghost { background: none; color: var(--ink); border: 1px solid var(--edge); }
+.hdr .btn { padding: .7rem 1.35rem; min-height: 0; }
+
+.burger { display: grid; place-items: center; width: 44px; height: 44px; color: var(--paper); margin-right: -.6rem; }
+.hdr[data-stuck] .burger { color: var(--ink); }
+@media (min-width: 900px) { .burger { display: none; } }
+.menu { position: fixed; inset: 0; z-index: 70; background: var(--paper); padding: 1rem var(--gutter); display: none; flex-direction: column; }
+.menu[data-open] { display: flex; }
+.menu a { font-family: var(--display); font-size: var(--s3); text-decoration: none; padding-block: .4rem; font-variation-settings: 'opsz' 48; }
+.menu__close { align-self: flex-end; width: 44px; height: 44px; }
+
+/* Hero */
+.hero { position: relative; min-height: 92svh; display: flex; align-items: flex-end; background: var(--hull); overflow: hidden; }
+.hero__sky { position: absolute; inset: 0; background:
+  radial-gradient(120% 90% at 70% 10%, #2d5366 0%, #1B3A4B 46%, #0f2634 100%); }
+/* An SVG with only a viewBox has no intrinsic width, so an <img> of one falls back to 300px unless
+   told otherwise. Caught it rendering as a thumbnail. */
+.hero__city { position: absolute; left: 0; right: 0; bottom: 19%; width: 100%; opacity: .5; }
+.hero__sea { position: absolute; inset: auto 0 0; height: 22%; background: linear-gradient(180deg, #14303f, #0a1b24); }
+/* She sits on the water in the lower right, under the headline rather than behind it. The text has
+   to win; she is the setting, not the subject. */
+.hero__ship { position: absolute; right: -6%; bottom: 13%; width: min(74%, 980px); opacity: .9;
+  filter: drop-shadow(0 20px 46px rgba(0,0,0,.5)); }
+@media (max-width: 900px) { .hero__ship { right: -18%; width: 128%; bottom: 20%; } }
+.hero__in { position: relative; padding-bottom: clamp(3rem, 8vw, 6rem); width: 100%; }
+.hero h1 { color: var(--paper); max-width: 13ch; }
+.hero__sub { color: rgba(251,250,248,.9); font-size: var(--s1); margin-top: 1.4rem; max-width: 36ch; }
+.hero__cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero .btn--ghost { color: var(--paper); border-color: rgba(251,250,248,.45); }
+
+/* Water, moving slowly. The only ambient motion on the page. */
+.wave { position: absolute; left: 0; bottom: 0; width: 200%; height: 46px; opacity: .5; }
+.wave path { fill: #1b4055; }
+.wave--b { bottom: 8px; opacity: .3; animation-duration: 19s; }
+@media (prefers-reduced-motion: no-preference) {
+  .wave { animation: drift 13s linear infinite; }
+}
+@keyframes drift { to { transform: translateX(-50%); } }
+
+/* Waterline. A bow-on hull section filling to the height of the money raised, with draught numerals
+   up the left edge marking the millions. Rises once, on first view. */
+.water { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 900px) { .water { grid-template-columns: 1.1fr .9fr; gap: 5rem; } }
+.water__fig { margin: 0; max-width: 290px; }
+.water__fig svg { width: 100%; }
+.water__fill { transition: transform 1.6s cubic-bezier(.22,1,.36,1); }
+.water__num { font-family: var(--display); font-size: var(--s4); line-height: 1; display: block; }
+.water__of { color: var(--muted); }
+
+/* Timeline: draught marks up the bow */
+.tl { position: relative; border-left: 1px solid var(--hull); padding-left: clamp(1.5rem, 5vw, 4rem); }
+.tl__item { position: relative; padding-block: 0 clamp(3rem, 7vw, 5rem); }
+.tl__item:last-child { padding-bottom: 0; }
+.tl__year { position: absolute; left: calc(clamp(1.5rem, 5vw, 4rem) * -1 - .55em); top: -.1em; font-family: var(--display); font-size: var(--s2); line-height: 1; color: var(--hull); background: var(--paper); padding-block: .35rem; font-variation-settings: 'opsz' 40; }
+.tl__t { font-size: var(--s2); margin-bottom: .6rem; }
+.tl__b { color: var(--muted); max-width: 46ch; }
+
+/* Builder's plate */
+.plate { border-block: 1px solid var(--brass); padding-block: 2.5rem; display: grid; gap: 2rem; }
+@media (min-width: 640px) { .plate { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .plate { grid-template-columns: repeat(4, 1fr); } }
+.plate dt { font-size: var(--sm); color: var(--muted); }
+.plate dd { margin: .5rem 0 0; }
+
+/* Support */
+.tiers { display: grid; gap: 1px; background: var(--edge); border: 1px solid var(--edge); margin-top: 2.5rem; }
+@media (min-width: 700px) { .tiers { grid-template-columns: repeat(4, 1fr); } }
+.tier { background: var(--paper); padding: 1.75rem 1.5rem; }
+.tier b { font-family: var(--display); font-size: var(--s2); display: block; font-variation-settings: 'opsz' 32; }
+.tier span { display: block; margin-top: .5rem; color: var(--muted); font-size: var(--sm); }
+
+/* Footer */
+.ftr { background: var(--hull); color: var(--paper); padding-block: 4rem 3rem; }
+.ftr a { color: inherit; }
+.ftr__grid { display: grid; gap: 2.5rem; }
+@media (min-width: 800px) { .ftr__grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.ftr h4 { font-family: var(--display); font-size: var(--s2); font-weight: 500; font-variation-settings: 'opsz' 32; }
+.ftr li { margin-top: .6rem; font-size: var(--sm); }
+.ftr__legal { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(251,250,248,.2); font-size: var(--sm); opacity: .78; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; }
+
+/* The way in. A brass lozenge, unlabelled - the kind of thing you only click if you already know it
+   is there. Keyboard reachable, so it is a secret and not a trap. */
+.keyhole { width: 13px; height: 13px; margin-left: auto; border: 1px solid var(--brass); background: transparent; transform: rotate(45deg); transition: background .25s ease, box-shadow .25s ease; }
+.keyhole:hover, .keyhole:focus-visible { background: var(--brass); box-shadow: 0 0 0 5px rgba(156,123,63,.22); }

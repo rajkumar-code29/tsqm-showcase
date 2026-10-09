@@ -1,0 +1,36 @@
+/* All nine faces declared in one file. A browser only downloads a face that rendered text actually
+   uses, so every template can link this and still pull just its own two. */
+
+/* 1 · Draught */
+@font-face { font-family:'Bodoni Moda'; src:url('../fonts/bodoni-moda.woff2') format('woff2-variations');
+  font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('../fonts/inter.woff2') format('woff2-variations');
+  font-weight:400 700; font-style:normal; font-display:swap; }
+
+/* 2 · Brass & Bone */
+@font-face { font-family:'Cormorant Garamond'; src:url('../fonts/cormorant.woff2') format('woff2');
+  font-weight:300 600; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jost'; src:url('../fonts/jost.woff2') format('woff2-variations');
+  font-weight:300 500; font-style:normal; font-display:swap; }
+
+/* 3 · Tidewater */
+@font-face { font-family:'Marcellus'; src:url('../fonts/marcellus.woff2') format('woff2');
+  font-weight:400; font-style:normal; font-display:swap; }
+
+/* 4 · Blueprint */
+@font-face { font-family:'IBM Plex Mono'; src:url('../fonts/plex-mono-1.woff2') format('woff2');
+  font-weight:300; font-style:normal; font-display:swap; }
+@font-face { font-family:'IBM Plex Mono'; src:url('../fonts/plex-mono-2.woff2') format('woff2');
+  font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'IBM Plex Mono'; src:url('../fonts/plex-mono-3.woff2') format('woff2');
+  font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'IBM Plex Sans'; src:url('../fonts/plex-sans.woff2') format('woff2-variations');
+  font-weight:300 600; font-style:normal; font-display:swap; }
+
+/* 5 · Nocturne */
+@font-face { font-family:'Prata'; src:url('../fonts/prata.woff2') format('woff2');
+  font-weight:400; font-style:normal; font-display:swap; }
+
+/* 6 · Queen Mary Cruises */
+@font-face { font-family:'Italiana'; src:url('../fonts/italiana.woff2') format('woff2');
+  font-weight:400; font-style:normal; font-display:swap; }

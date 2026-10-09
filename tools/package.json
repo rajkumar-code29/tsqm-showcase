@@ -1,0 +1,11 @@
+{
+  "name": "tsqm-proposal-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node build-pdf.mjs ../proposal/source/proposal.html ../proposal/TSQM_Websites_Proposal.pdf",
+    "shots": "node shots.mjs",
+    "check": "node check-css.mjs && node test-booking.mjs"
+  },
+  "dependencies": { "pdf-lib": "1.17.1" }
+}

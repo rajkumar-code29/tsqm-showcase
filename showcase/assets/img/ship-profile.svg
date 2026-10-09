@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 300" role="img" aria-label="Side profile of TS Queen Mary, a 1933 Clyde turbine steamer with a single funnel.">
+  <title>TS Queen Mary — side elevation</title>
+  <!--
+    Drawn from her post-1957 configuration: the oil conversion that replaced her
+    original two funnels with the single one she carries today. Bow to the right.
+    Everything uses currentColor so each template can tint her to its own palette.
+  -->
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- Hull: counter stern aft, raked stem forward, gentle sheer amidships -->
+    <path d="M 74 184
+             C 250 194, 540 199, 840 195
+             C 1060 191, 1230 180, 1326 158
+             L 1316 196
+             C 1308 220, 1286 242, 1248 246
+             L 180 246
+             C 124 246, 84 218, 74 184 Z"
+          fill="currentColor" fill-opacity="0.08"/>
+
+    <!-- Promenade deck -->
+    <path d="M 286 196 L 286 150 L 1062 150 L 1062 196" fill="currentColor" fill-opacity="0.04"/>
+    <!-- Boat deck -->
+    <path d="M 386 150 L 386 118 L 986 118 L 986 150" fill="currentColor" fill-opacity="0.04"/>
+    <!-- Bridge and wheelhouse -->
+    <path d="M 824 118 L 824 94 L 962 94 L 962 118" fill="currentColor" fill-opacity="0.06"/>
+
+    <!-- The funnel. Raked aft, as she is. -->
+    <path d="M 660 118 L 672 40 L 730 40 L 742 118 Z" fill="currentColor" fill-opacity="0.14"/>
+    <path d="M 670 52 L 732 52" stroke-width="1.5"/>
+
+    <!-- Masts -->
+    <path d="M 892 94 L 884 16" stroke-width="2"/>
+    <path d="M 858 44 L 912 38" stroke-width="1.25"/>
+    <path d="M 432 118 L 426 46" stroke-width="2"/>
+    <path d="M 402 68 L 452 64" stroke-width="1.25"/>
+
+    <!-- Lifeboats under davits along the boat deck -->
+    <g stroke-width="1.5">
+      <ellipse cx="430" cy="110" rx="23" ry="7"/>
+      <ellipse cx="486" cy="110" rx="23" ry="7"/>
+      <ellipse cx="542" cy="110" rx="23" ry="7"/>
+      <ellipse cx="820" cy="110" rx="23" ry="7"/>
+      <ellipse cx="876" cy="110" rx="23" ry="7"/>
+      <ellipse cx="932" cy="110" rx="23" ry="7"/>
+    </g>
+
+    <!-- Promenade glazing -->
+    <g stroke-width="1" opacity="0.65">
+      <path d="M 300 162 L 1050 162"/>
+      <path d="M 300 178 L 1050 178"/>
+    </g>
+    <g stroke-width="1" opacity="0.4">
+      <path d="M 340 150 L 340 196"/><path d="M 400 150 L 400 196"/><path d="M 460 150 L 460 196"/>
+      <path d="M 520 150 L 520 196"/><path d="M 580 150 L 580 196"/><path d="M 640 150 L 640 196"/>
+      <path d="M 700 150 L 700 196"/><path d="M 760 150 L 760 196"/><path d="M 820 150 L 820 196"/>
+      <path d="M 880 150 L 880 196"/><path d="M 940 150 L 940 196"/><path d="M 1000 150 L 1000 196"/>
+    </g>
+
+    <!-- Hull plating seam and the boot-topping line -->
+    <path d="M 112 220 L 1282 214" stroke-width="1" opacity="0.5"/>
+  </g>
+</svg>

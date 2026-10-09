@@ -1,0 +1,106 @@
+/* The hidden collection - shared structure, per-template palette. */
+
+:root {
+  --v-ground: #0B0C0E;
+  --v-ink:    #F5F1E8;
+  --v-rule:   #9C7B3F;
+  --v-accent: #C9A961;
+  --v-display: 'Bodoni Moda', Didot, Georgia, serif;
+  --v-text: 'Inter', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --v-wrap: 72rem;
+}
+
+.vault-body {
+  background: var(--v-ground);
+  color: var(--v-ink);
+  font: 400 clamp(1rem, .97rem + .14vw, 1.1rem)/1.65 var(--v-text);
+  min-height: 100svh;
+}
+
+/* Guilloché - the engine-turning under Fabergé's translucent enamel, which is the house's actual
+   signature technique. */
+.vault-body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .055;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, transparent 0 11px, var(--v-rule) 11px 11.6px),
+    repeating-radial-gradient(circle at 78% 68%, transparent 0 13px, var(--v-rule) 13px 13.6px);
+}
+.vault-body > * { position: relative; z-index: 1; }
+
+.vault__rule { border: 0; border-top: 1px solid color-mix(in srgb, var(--v-rule) 48%, transparent); margin-block: 1.4rem; }
+.vault__wrap { max-width: var(--v-wrap); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+
+:where(.vault-body) :focus-visible {
+  outline: 2px solid var(--v-accent); outline-offset: 3px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--v-ink) 22%, transparent);
+}
+
+/* The gate */
+.gate { min-height: 100svh; display: grid; place-items: center; padding: 2rem 1.5rem 4rem; text-align: center; }
+.gate__in { max-width: 32rem; }
+.gate__egg { width: 92px; margin: 0 auto 2rem; color: var(--v-rule); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .gate__egg { animation: gatefloat 7s ease-in-out infinite; }
+  @keyframes gatefloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+}
+
+.gate__h { font: 500 clamp(1.9rem, 1.5rem + 1.6vw, 2.9rem)/1.1 var(--v-display); }
+.gate__p { margin-top: 1rem; opacity: .68; max-width: 34ch; margin-inline: auto; }
+
+.gate__code {
+  margin-top: 2.2rem; width: 10ch; padding: .7rem 0;
+  background: transparent; border: 0; border-bottom: 1px solid var(--v-rule);
+  color: var(--v-ink); font: 400 2.2rem/1 var(--v-text);
+  letter-spacing: .5em; text-indent: .5em; text-align: center;
+}
+.gate__code::placeholder { color: color-mix(in srgb, var(--v-ink) 26%, transparent); letter-spacing: .36em; }
+.gate__code:focus { outline: none; border-bottom-color: var(--v-accent); }
+
+[data-vault-state='refused'] .gate__code { animation: shake .4s; border-bottom-color: #b4473e; }
+@keyframes shake { 10%,90% { transform: translateX(-2px);} 30%,70% { transform: translateX(5px);} 50% { transform: translateX(-5px);} }
+
+.gate__err { min-height: 1.5rem; margin-top: .9rem; font-size: .9rem; color: #d98a80; }
+
+.gate__demo {
+  margin-top: 2.6rem; padding: 1.1rem 1.25rem; text-align: left;
+  border: 1px solid color-mix(in srgb, var(--v-rule) 36%, transparent);
+  font-size: .82rem; line-height: 1.6; opacity: .78;
+}
+.gate__demo b { color: var(--v-accent); font-weight: 600; }
+.gate__back { margin-top: 1.6rem; font-size: .86rem; opacity: .6; }
+.gate__back a { color: inherit; }
+
+/* The collection */
+@media (prefers-reduced-motion: no-preference) {
+  [data-vault-content] { animation: unseal 1.1s cubic-bezier(.22,1,.36,1) both; }
+  @keyframes unseal {
+    from { opacity: 0; clip-path: inset(48% 0 48% 0); }
+    to   { opacity: 1; clip-path: inset(0 0 0 0); }
+  }
+}
+
+.vault__hdr { padding-block: clamp(3.5rem, 9vw, 6rem) 0; }
+.vault__title { font: 500 clamp(2.1rem, 1.5rem + 2.6vw, 3.6rem)/1.05 var(--v-display); }
+.vault__sub { margin-top: 1.1rem; font-size: .86rem; color: var(--v-accent); }
+
+.vitrine { display: grid; gap: 2.5rem; padding-block: clamp(3rem, 8vw, 6rem); }
+@media (min-width: 900px) { .vitrine { grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: start; } }
+.vitrine__img svg { width: 100%; max-width: 330px; }
+.vitrine__rec h2 { font: 500 clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem)/1.15 var(--v-display); }
+.vitrine__rec h3 { font: 400 .8rem/1 var(--v-text); letter-spacing: .04em; color: var(--v-accent); margin-bottom: .7rem; }
+.vitrine__meta { margin-top: .6rem; font-size: .86rem; color: var(--v-accent); }
+
+.vault__note {
+  border-left: 2px solid var(--v-rule); padding: .4rem 0 .4rem 1.2rem;
+  font-size: .9rem; opacity: .68; max-width: 54ch;
+}
+.vault__ftr { margin-top: 3rem; padding-block: 2rem 4rem; border-top: 1px solid color-mix(in srgb, var(--v-rule) 36%, transparent); font-size: .86rem; opacity: .62; }
+.vault__ftr a { color: var(--v-accent); }
+
+/* These records are confidential, and a print is an unwatermarked copy that walks out of the
+   building. */
+@media print {
+  .vault-body * { display: none !important; }
+  .vault-body::after { content: 'This record is not for printing.'; display: block !important; font: 18pt Georgia, serif; padding: 4rem; color: #000; }
+}

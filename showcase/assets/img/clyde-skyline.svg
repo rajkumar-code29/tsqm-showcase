@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 260" role="img" aria-label="The Clyde waterfront at Pacific Quay: the Finnieston Crane, the SEC Armadillo, the Science Centre tower and the Riverside Museum.">
+  <title>Pacific Quay, Glasgow</title>
+  <!--
+    Her actual neighbourhood. Left to right: Riverside Museum, the Science Centre
+    tower, the Armadillo, the Finnieston Crane, the Squinty Bridge. Drawn as one
+    continuous silhouette so it reads as a skyline rather than a row of logos.
+  -->
+  <g fill="currentColor">
+    <!-- Riverside Museum: Hadid's zigzag roof -->
+    <path d="M 0 230 L 0 186 L 56 124 L 108 184 L 162 118 L 216 186 L 268 126 L 310 184 L 310 230 Z" opacity="0.5"/>
+
+    <!-- Glasgow Tower -->
+    <path d="M 372 230 L 376 92 Q 384 76 392 92 L 396 230 Z" opacity="0.75"/>
+    <ellipse cx="384" cy="84" rx="13" ry="9" opacity="0.75"/>
+
+    <!-- Science Centre crescent -->
+    <path d="M 430 230 Q 500 150 578 230 Z" opacity="0.5"/>
+
+    <!-- The Armadillo -->
+    <path d="M 640 230 Q 672 174 706 230 Z" opacity="0.55"/>
+    <path d="M 694 230 Q 730 166 768 230 Z" opacity="0.55"/>
+    <path d="M 754 230 Q 796 158 840 230 Z" opacity="0.55"/>
+
+    <!-- The OVO Hydro -->
+    <path d="M 880 230 Q 952 168 1024 230 Z" opacity="0.4"/>
+
+    <!-- The Finnieston Crane. The one everybody actually recognises. -->
+    <g opacity="0.9">
+      <rect x="1118" y="96" width="11" height="134"/>
+      <rect x="1166" y="96" width="11" height="134"/>
+      <path d="M 1112 96 L 1183 96 L 1183 84 L 1112 84 Z"/>
+      <path d="M 1100 84 L 1300 60 L 1300 72 L 1100 96 Z"/>
+      <path d="M 1100 84 L 1062 92 L 1062 80 L 1100 72 Z"/>
+      <path d="M 1272 66 L 1272 112" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="1264" y="112" width="17" height="11"/>
+      <path d="M 1123 230 L 1112 230 L 1123 96 Z" opacity="0.6"/>
+      <path d="M 1172 230 L 1183 230 L 1172 96 Z" opacity="0.6"/>
+    </g>
+
+    <!-- Clyde Arc, the Squinty Bridge -->
+    <g opacity="0.6">
+      <path d="M 1356 222 Q 1480 128 1604 222" fill="none" stroke="currentColor" stroke-width="7"/>
+      <rect x="1356" y="222" width="248" height="8"/>
+      <g stroke="currentColor" stroke-width="2">
+        <path d="M 1404 196 L 1404 222"/><path d="M 1444 172 L 1444 222"/>
+        <path d="M 1484 158 L 1484 222"/><path d="M 1524 170 L 1524 222"/>
+        <path d="M 1564 194 L 1564 222"/>
+      </g>
+    </g>
+  </g>
+</svg>
