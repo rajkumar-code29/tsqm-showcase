@@ -48,11 +48,11 @@ cd "/Users/raj/Developer/New Parent" && git remote add origin git@github.com:<yo
 
 ### 2. Turn on Pages
 
-Repository -> **Settings -> Pages** -> Source: **Deploy from a branch** ->
-Branch `main`, folder `/showcase` -> Save.
+Repository -> **Settings -> Pages** -> Source: **GitHub Actions** -> Save.
 
-If GitHub does not offer `/showcase` as a folder, it only lists `/` and `/docs`
-— either rename `showcase` to `docs`, or use the Action in step 4 instead.
+`.github/workflows/pages.yml` is already in the repo and publishes the
+`showcase` folder on every push to `main`. Pages can only serve `/` or `/docs`
+from a branch, which is why this goes through an Action instead.
 
 ### 3. Point the subdomain at it
 
@@ -65,27 +65,6 @@ In your DNS for `rajkumar.codes`, add:
 `showcase/CNAME` already contains `tsqm-dev.rajkumar.codes`, so GitHub picks the
 domain up on its own. Tick **Enforce HTTPS** once the certificate issues — that
 takes a few minutes and occasionally up to an hour.
-
-### 4. If you would rather deploy with an Action
-
-Settings -> Pages -> Source: **GitHub Actions**, then add
-`.github/workflows/pages.yml`:
-
-```yaml
-name: Pages
-on: { push: { branches: [main] } }
-permissions: { pages: write, id-token: write, contents: read }
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: github-pages
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: showcase }
-      - uses: actions/deploy-pages@v4
-```
 
 ### Before you send the link
 
