@@ -163,12 +163,6 @@ function page(dir, t) {
         </div>
       </article>
 
-      <p class="vault__note">
-        The records shown are illustrative &#8212; the charity has not yet supplied the real ones.
-        Valuation, insurance reference and current location are deliberately absent: in the live
-        build they are restricted at field level, so an editor updating a caption never sees them.
-      </p>
-
       <footer class="vault__ftr">
         <p>These records are confidential. In the live build every image carries the viewer&#8217;s
         name and the time it was served, and the collection closes after twenty minutes without activity.</p>
