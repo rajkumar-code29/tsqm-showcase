@@ -52,9 +52,10 @@
 <section class="section wrap">
   <div class="plate2" data-reveal>
     <p class="cap" style="color:var(--brass)">The restoration appeal</p>
-    <p class="plate2__fig">&pound;4.8m</p>
+    <p class="plate2__fig">&pound;xx m</p>
     <div class="plate2__bar"><span id="bar" style="width:0"></span></div>
     <div class="plate2__scale"><span>&pound;0</span><span>Target &pound;10m</span></div>
+    <p class="cap" style="margin-top:.6rem">Figure to be confirmed</p>
     <p style="margin-top:1.6rem;color:var(--muted);max-width:40ch">
       Every pound goes into steel, boilers and the certification that lets a 1933 hull carry
       passengers again. Nothing else.
@@ -123,10 +124,11 @@
 
 <script src="../assets/js/core.js"></script>
 <script>
-// The brass fills once, on first view. 48% of the target.
+// The brass fills once, on first view. The level is indicative until the
+// charity confirms the figure.
 (function () {
   var bar = document.getElementById('bar'); if (!bar) return;
-  var pct = (4.8 / 10 * 100).toFixed(1) + '%';
+  var pct = '48%';
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { bar.style.width = pct; return; }
   new IntersectionObserver(function (es, o) {
     es.forEach(function (e) { if (e.isIntersecting) { bar.style.width = pct; o.disconnect(); } });

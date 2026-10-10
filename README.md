@@ -109,8 +109,9 @@ without warning. Eight of those got in before I spotted it.
 ## What is not real yet
 
 - **Photographs.** All artwork is drawn SVG. The archive has not arrived.
-- **Fundraising figures.** £4.8m of £10m comes from the brief and needs
-  confirming against the accounts before anything is published.
+- **Fundraising figures.** The raised total shows as `£xx m` on purpose. The
+  brief says £4.8m of £10m; the public record does not match that, so nothing
+  gets published until the charity confirms it against the accounts.
 - **Fabergé records.** Illustrative. The charity has not supplied the real ones.
 - **The hidden page.** A browser-side code, clearly labelled as a demonstration
   on the page itself. The production model is in the proposal.
