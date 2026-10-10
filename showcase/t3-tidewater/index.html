@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<link rel="icon" href="../assets/photos/roundel-64.png">
 <link rel="preload" href="../assets/fonts/marcellus.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -33,7 +34,10 @@
 <section class="hero">
   <div class="hero__tide" aria-hidden="true"></div>
   <div class="hero__line" aria-hidden="true"></div>
-  <img class="hero__ship" src="../assets/img/ship-profile-ink.svg" alt="" aria-hidden="true">
+  <picture class="hero__photo">
+    <source srcset="../assets/photos/hull-gangway.webp" type="image/webp">
+    <img src="../assets/photos/hull-gangway.jpg" alt="" aria-hidden="true">
+  </picture>
   <div class="wrap hero__in">
     <p class="kick">Glasgow &#183; Est. 1933</p>
     <h1 style="margin-top:1.6rem">Doon the watter, again</h1>

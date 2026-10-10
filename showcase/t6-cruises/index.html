@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<link rel="icon" href="../assets/photos/roundel-64.png">
 <link rel="preload" href="../assets/fonts/italiana.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -38,8 +39,10 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero__glow" aria-hidden="true"></div>
-  <img class="hero__city" src="../assets/img/clyde-skyline-dark.svg" alt="" aria-hidden="true">
-  <img class="hero__ship" src="../assets/img/ship-profile-light.svg" alt="TS Queen Mary under way on the Firth of Clyde.">
+  <picture class="hero__photo">
+    <source srcset="../assets/photos/hero-historic.webp" type="image/webp">
+    <img src="../assets/photos/hero-historic.jpg" alt="TS Queen Mary under way on the Firth of Clyde." fetchpriority="high">
+  </picture>
   <div class="hero__sea" aria-hidden="true"></div>
   <div class="wrap hero__in">
     <p class="kick" style="color:var(--gold-l)">Sailing from Glasgow &#183; 2027</p>
@@ -48,9 +51,9 @@
     <div class="hero__cta">
       <a class="btn btn--gold" href="#book">Reserve a voyage</a>
       <a class="btn btn--line" href="#voyages">View itineraries</a>
-      <span class="ai" style="background:transparent;color:var(--gold-l);border-color:var(--gold-l)">Artist&#8217;s impression</span>
     </div>
   </div>
+  <p class="photocredit">Archive photograph courtesy of Friends of TS Queen Mary</p>
 </section>
 
 <!-- Voyages -->
