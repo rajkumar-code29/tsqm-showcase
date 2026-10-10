@@ -173,13 +173,15 @@ h2 { font-size: var(--s2); line-height: 1.2; letter-spacing: -0.005em; }
 .note li::before { content: ''; position: absolute; left: 0; top: 0.64em; width: 5px; height: 5px; background: var(--bronze); }
 
 /* Bronze band, the RSSC device */
-.band { background: var(--bronze); color: #fff; }
+/* A darker bronze here so body text on it clears 4.5:1. The lighter
+   --bronze stays for fills and rules, where contrast does not apply. */
+.band { background: #7A5C35; color: #fff; }
 .band__in { padding-block: clamp(2rem, 4vw, 3rem); display: grid; gap: 1.5rem; align-items: center; }
 @media (min-width: 860px) { .band__in { grid-template-columns: 1fr auto; } }
 .band h2 { color: #fff; }
-.band p { color: rgba(255, 255, 255, 0.88); margin-top: 0.5rem; font-size: 0.95rem; max-width: 56ch; }
+.band p { color: #fff; margin-top: 0.5rem; font-size: 0.95rem; max-width: 56ch; }
 .band a {
-  display: inline-block; background: #fff; color: var(--bronze);
+  display: inline-block; background: #fff; color: #7A5C35;
   font-family: var(--display); font-weight: 600; font-size: var(--sm);
   letter-spacing: 0.12em; text-transform: uppercase;
   padding: 1rem 2.2rem; text-decoration: none; white-space: nowrap;

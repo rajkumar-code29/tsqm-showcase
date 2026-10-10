@@ -149,3 +149,20 @@ h3 { font-size: var(--s2); line-height: 1.2; }
 .ftr__legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--grid-2);font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .keyhole{width:12px;height:12px;border:1px solid var(--cyan);transform:rotate(45deg);margin-left:auto;transition:background .25s,box-shadow .25s}
 .keyhole:hover,.keyhole:focus-visible{background:var(--cyan);box-shadow:0 0 0 5px rgba(14,110,146,.18)}
+
+/* Photographs as plates pinned to the drawing sheet: corner ticks, a reference
+   number, and a caption set like a drawing note. */
+.plate{position:relative;border:1px solid var(--grid-2);background:#fff;padding:7px}
+.plate img{width:100%;display:block}
+.plate::before,.plate::after{content:'';position:absolute;width:9px;height:9px;border:1px solid var(--cyan);opacity:.6}
+.plate::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.plate::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.plate figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);padding-top:6px;
+  display:flex;justify-content:space-between;gap:1rem}
+.plate figcaption b{color:var(--cyan-d);font-weight:500}
+
+.plates{display:grid;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:800px){.plates{grid-template-columns:repeat(3,1fr)}}
+
+.elev{display:grid;gap:2.5rem;align-items:center;margin-top:3rem}
+@media(min-width:960px){.elev{grid-template-columns:1.05fr .95fr;gap:3.5rem}}

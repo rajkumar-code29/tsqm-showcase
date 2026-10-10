@@ -152,7 +152,7 @@
   }
 
   function init() {
-    initReveal(); initShowbar(); initVault(); initHeader(); initMenu();
+    initReveal(); initShowbar(); initVault(); initHeader(); initMenu(); photoMotion();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

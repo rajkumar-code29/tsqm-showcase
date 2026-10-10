@@ -116,3 +116,30 @@ h3 { font-size: var(--s2); line-height: 1.25; }
 .ftr__legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--edge);font-size:var(--sm);color:var(--muted);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .keyhole{width:12px;height:12px;border:1px solid var(--sand);transform:rotate(45deg);margin-left:auto;transition:background .25s,box-shadow .25s}
 .keyhole:hover,.keyhole:focus-visible{background:var(--sand);box-shadow:0 0 0 5px rgba(185,166,132,.22)}
+
+/* Photographs. Kept pale and generously spaced so the page stays airy. */
+.stop__art{padding:0;display:block}
+/* The picture element is the grid item, so it has to be told to fill. */
+.stop__art picture{display:block;position:absolute;inset:0}
+.stop__art img{width:100%;height:100%;object-fit:cover;display:block}
+.stop__y{z-index:2;background:rgba(255,255,255,.9);padding:.15rem .6rem;left:0;top:0}
+
+.band{position:relative;height:clamp(300px,52vh,560px);overflow:hidden;background:var(--mist)}
+.band img{position:absolute;inset:-12% 0;width:100%;height:124%;object-fit:cover;object-position:center 42%}
+.band__q{position:absolute;inset:auto 0 0;padding:clamp(1.5rem,5vw,3rem);
+  background:linear-gradient(transparent,rgba(22,32,31,.62))}
+.band__q p{color:#fff;font-family:var(--display);font-size:var(--s3);max-width:22ch;line-height:1.2}
+.band__q span{display:block;color:rgba(255,255,255,.72);font-size:var(--sm);margin-top:.7rem}
+
+.pair{display:grid;gap:1.5rem;margin-top:3rem}
+@media(min-width:760px){.pair{grid-template-columns:repeat(3,1fr)}}
+.pair figure{margin:0}
+.pair img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.pair figcaption{font-size:var(--sm);color:var(--muted);margin-top:.7rem}
+
+.people{display:grid;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:720px){.people{grid-template-columns:repeat(2,1fr)}}
+.person{display:flex;gap:1.2rem;align-items:center}
+.person img{width:88px;height:88px;object-fit:cover;flex:0 0 auto}
+.person h3{font-size:var(--s1)}
+.person p{color:var(--muted);font-size:var(--sm);margin-top:.2rem}
