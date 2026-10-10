@@ -76,6 +76,22 @@ takes a few minutes and occasionally up to an hour.
 
 ---
 
+## The gallery page
+
+Charcoal and bronze after rssc.com, set in Poppins and Inter, the same pairing
+as the Afroscots site. Poppins replaced a Didone that was hard to read at small
+sizes.
+
+The motion is plain JavaScript rather than React and a motion library, because
+the whole point of this repo is that GitHub Pages can serve it with no build
+step. The headline rises word by word, the cards arrive in sequence on scroll,
+and a bronze hairline tracks scroll position. Everything degrades: if the script
+never runs, the page is already in its finished state, and there is a two second
+failsafe that shows any card the observer has not reached.
+
+The six templates keep their own typefaces and palettes. They are meant to look
+like six different directions, not one design six times.
+
 ## Checks
 
 ```bash

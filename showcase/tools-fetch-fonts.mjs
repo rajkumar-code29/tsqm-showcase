@@ -11,6 +11,9 @@ const FACES = [
   // 1 · Draught - interwar liner-poster Didone, as the real build uses
   ['bodoni-moda',    'Bodoni+Moda:opsz,wght@6..96,500'],
   ['inter',          'Inter:wght@400..700'],
+  // Gallery display face. Same pairing as the Afroscots site: Poppins reads
+  // cleanly at every size, which Bodoni does not.
+  ['poppins',        'Poppins:wght@400;500;600;700'],
   // 2 · Brass & Bone - Deco-era elegance
   ['cormorant',      'Cormorant+Garamond:wght@300;400;600'],
   ['jost',           'Jost:wght@300;400;500'],

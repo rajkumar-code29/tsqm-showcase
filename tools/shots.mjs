@@ -32,10 +32,18 @@ for (const t of templates) {
     }
 
     // Let the reveal observers and the waterline settle before capturing.
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
-    await page.waitForTimeout(900)
-    await page.evaluate(() => window.scrollTo(0, 0))
-    await page.waitForTimeout(500)
+    // Step down the page with smooth scrolling off, so every reveal observer
+    // actually fires before the capture.
+    await page.evaluate(async () => {
+      document.documentElement.style.scrollBehavior = 'auto'
+      const step = window.innerHeight * 0.7
+      for (let y = 0; y < document.body.scrollHeight; y += step) {
+        window.scrollTo(0, y)
+        await new Promise((r) => setTimeout(r, 120))
+      }
+      window.scrollTo(0, 0)
+    })
+    await page.waitForTimeout(700)
 
     await page.screenshot({ path: `${OUT}${t}-${label}.jpg`, fullPage: full, quality: 86, type: 'jpeg' })
     console.log(`  ${t.padEnd(14)} ${label.padEnd(8)} ok`)

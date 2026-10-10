@@ -11,36 +11,41 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/gallery.css">
-<link rel="preload" href="assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/poppins-2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#1F1F1F">
 </head>
 <body>
 <a class="skip" href="#six">Skip to the six</a>
+<div class="prog" id="prog" aria-hidden="true"></div>
 
 <!-- Masthead -->
 <header class="top">
-  <div class="wrap top__grid">
-    <div>
-      <p class="kick">Prepared for Friends of TS Queen Mary</p>
-      <h1>Six ways this could look</h1>
-      <p class="top__lede">
-        Every one of these is a working website, not a picture of one. Click a card and you are
-        in it &#8212; scroll it, open the menu, resize it, try it on your phone.
-      </p>
-      <p class="cap" style="margin-top:1.2rem;max-width:46ch">
-        Five are directions for the charity site. The sixth is the operating company site, the one
-        for investors, and it includes a booking system you can actually use.
-      </p>
-    </div>
+  <div class="top__glow" aria-hidden="true"></div>
+  <img class="top__ship" src="assets/img/ship-profile-light.svg" alt="" aria-hidden="true">
 
-    <dl class="facts">
-      <div><dt>Prepared by</dt><dd>Raj Kumar</dd></div>
-      <div><dt>For</dt><dd>Iain Sim, Chairman</dd></div>
-      <div><dt>Date</dt><dd>10 October 2026</dd></div>
-      <div><dt>Brief</dt><dd>Cunard &#183; Belmond &#183; crisp white</dd></div>
-      <div><dt>Built in</dt><dd>HTML, CSS, JavaScript</dd></div>
-      <div><dt>Hidden page code</dt><dd><b>1234</b></dd></div>
-    </dl>
+  <div class="wrap top__in">
+    <div class="top__grid">
+      <div>
+        <p class="kick">Friends of TS Queen Mary</p>
+        <h1 id="headline">Six ways this could look</h1>
+        <p class="top__lede">
+          Every one of these is a working website, not a picture of one. Open a card and you are
+          in it: scroll it, use the menu, resize it, try it on your phone.
+        </p>
+        <p class="cap" style="margin-top:1.2rem;max-width:46ch">
+          Five are directions for the charity site. The sixth is the operating company site, and
+          it includes a booking system you can actually use.
+        </p>
+      </div>
+
+      <dl class="facts">
+        <div><dt>Brief</dt><dd>Cunard, Belmond, crisp white</dd></div>
+        <div><dt>Built in</dt><dd>HTML, CSS, JavaScript</dd></div>
+        <div><dt>Templates</dt><dd>Six, all working</dd></div>
+        <div><dt>Hidden page code</dt><dd><b>1234</b></dd></div>
+      </dl>
+    </div>
   </div>
 </header>
 
@@ -65,7 +70,7 @@
         <h2>Draught</h2>
         <p class="card__p">The most restrained of the six. Everything structural is borrowed from the ship: the timeline numerals are draught marks, the section rule is a waterline, and the fundraising total is a hull filling with water.</p>
         <div class="card__meta"><span class="chip">Bodoni Moda</span><span class="chip">Asymmetric</span><span class="chip">Filling hull</span></div>
-        <span class="card__go">Open this one &#8594;</span>
+        <span class="card__go">Open this one <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -77,7 +82,7 @@
         <h2>Brass &amp; Bone</h2>
         <p class="card__p">Centred and ceremonial where Draught is asymmetric. The page is built on a vertical axis like a 1930s liner poster, with a sunburst behind her funnel and the appeal total engraved on a brass plate.</p>
         <div class="card__meta"><span class="chip">Cormorant</span><span class="chip">Symmetrical</span><span class="chip">Deco ornament</span></div>
-        <span class="card__go">Open this one &#8594;</span>
+        <span class="card__go">Open this one <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -89,7 +94,7 @@
         <h2>Tidewater</h2>
         <p class="card__p">The closest of the six to the Belmond site you sent. Almost entirely white, with the sea present everywhere as a wash and nowhere as a block. The fundraising total is a tide coming in across the page.</p>
         <div class="card__meta"><span class="chip">Marcellus</span><span class="chip">Maximum white</span><span class="chip">Rising tide</span></div>
-        <span class="card__go">Open this one &#8594;</span>
+        <span class="card__go">Open this one <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -101,7 +106,7 @@
         <h2>Blueprint</h2>
         <p class="card__p">The biggest departure, and the most specifically hers. Graph paper, a general arrangement drawing whose lines draw themselves, annotation leaders and a title block. She is a piece of Clyde engineering, and this says so.</p>
         <div class="card__meta"><span class="chip">IBM Plex</span><span class="chip">Self-drawing lines</span><span class="chip">Dimension line</span></div>
-        <span class="card__go">Open this one &#8594;</span>
+        <span class="card__go">Open this one <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -113,7 +118,7 @@
         <h2>Nocturne</h2>
         <p class="card__p">The counter-proposal to crisp white, included to show the range. The argument for it is specific: an evening charter is a product the operating company will actually sell, and it does not photograph well on white.</p>
         <div class="card__meta"><span class="chip">Prata</span><span class="chip">Dark</span><span class="chip">Lit gauge</span></div>
-        <span class="card__go">Open this one &#8594;</span>
+        <span class="card__go">Open this one <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -129,7 +134,7 @@
           investor reads a navigation before they read a word.
         </p>
         <p class="card__p" style="margin-top:.7rem">
-          <b style="color:var(--ink)">It includes a booking system that works.</b> Choose a voyage,
+          <b style="color:var(--cream)">It includes a booking system that works.</b> Choose a voyage,
           a date, a stateroom and guests, and watch the price build line by line. Children are half
           fare. Confirm it and you get a booking reference. Nothing is charged and nothing leaves
           your browser &#8212; but it answers the question an investor always asks, which is what a
@@ -143,7 +148,7 @@
           <span class="chip">Italiana</span><span class="chip">Working booking flow</span>
           <span class="chip">Investor section</span><span class="chip">Artist&#8217;s impression labelling</span>
         </div>
-        <span class="card__go">Open the commercial site &#8594;</span>
+        <span class="card__go">Open the commercial site <i>&#8594;</i></span>
       </div>
     </a>
 
@@ -184,11 +189,27 @@
   </div>
 </section>
 
+<section class="band">
+  <div class="wrap band__in">
+    <div>
+      <h2>Tell me which parts work</h2>
+      <p>You do not have to pick one whole design. Taking the hero from one and the timeline from
+      another is normal, and it costs nothing extra because they share a foundation.</p>
+    </div>
+    <a href="mailto:hello@rajkumar.codes?subject=TS%20Queen%20Mary%20website">Send me your thoughts</a>
+  </div>
+</section>
+
 <footer class="wrap foot">
-  <p>
-    Prepared by <a href="https://rajkumar.codes">Raj Kumar</a> for Friends of TS Queen Mary,
-    October 2026. Not for publication.
+  <div class="foot__row">
+    <p>Prepared for Friends of TS Queen Mary by <a href="https://rajkumar.codes">Raj Kumar</a>.</p>
+    <p>Not for publication.</p>
+  </div>
+  <p class="foot__copy">
+    &copy; <span id="yr">2026</span> Raj Kumar. All rights reserved. TS Queen Mary and Friends of
+    TS Queen Mary are the property of the charity, Scottish charity SC043623.
   </p>
 </footer>
+<script src="assets/js/gallery.js"></script>
 </body>
 </html>

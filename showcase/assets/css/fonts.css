@@ -34,3 +34,13 @@
 /* 6 · Queen Mary Cruises */
 @font-face { font-family:'Italiana'; src:url('../fonts/italiana.woff2') format('woff2');
   font-weight:400; font-style:normal; font-display:swap; }
+
+/* Gallery display face, four static weights */
+@font-face { font-family:'Poppins'; src:url('../fonts/poppins-1.woff2') format('woff2');
+  font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../fonts/poppins-2.woff2') format('woff2');
+  font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../fonts/poppins-3.woff2') format('woff2');
+  font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../fonts/poppins-4.woff2') format('woff2');
+  font-weight:700; font-style:normal; font-display:swap; }
